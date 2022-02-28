@@ -33,19 +33,52 @@ a {
   display: block;
 }
 
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#js-black-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 900;
+}
+
+#js-black-bg.is-open {
+  opacity: 0.7;
+  visibility: visible;
+}
+
 .contents-box {
   position: relative;
-  width: 100%;
-  height: 100%;
+}
+
+.contents-box .vinyl {
+  padding-top: 5%;
+  padding-left: 5%;
+  z-index: -10;
 }
 
 .contents-box .vinyl .jacket-pic {
   position: relative;
+  margin-right: 110px;
 }
 
 .contents-box .vinyl .jacket-pic img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   opacity: 1;
   z-index: 500;
 }
@@ -53,40 +86,22 @@ a {
 .contents-box .vinyl .jacket-pic:hover + .vinyl-pic {
   -webkit-transition: all 1s;
   transition: all 1s;
-  left: 80px;
+  left: 105px;
   z-index: -10;
 }
 
 .contents-box .vinyl .vinyl-pic {
   position: absolute;
-  top: 5px;
-  left: 0;
+  top: calc(5% + 10px);
+  left: 5%;
   z-index: -10;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
 
 .contents-box .vinyl .vinyl-pic img {
-  width: 140px;
-  height: 140px;
-}
-
-.contents-box #js-black-bg {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.contents-box #js-black-bg.is-open {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  opacity: 0.7;
-  visibility: visible;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  width: 190px;
+  height: 190px;
 }
 
 .contents-box .anather-contents-box {
@@ -106,8 +121,6 @@ a {
 .contents-box .anather-contents-box.is-open {
   visibility: visible;
   opacity: 1;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
 }
 
 .contents-box .anather-contents-box .contents-box-vinyl-pic {
@@ -151,18 +164,49 @@ a {
   height: 2000px;
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (min-width: 476px) {
   #js-black-bg.is-open {
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
-    -webkit-transition-delay: .5s;
-            transition-delay: .5s;
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
   }
   .anather-contents-box.is-open {
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
-    -webkit-transition-delay: .5s;
-            transition-delay: .5s;
+    -webkit-transition: opacity 1s ease 0s;
+    transition: opacity 1s ease 0s;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  #js-black-bg.is-open {
+    -webkit-transition: all 1s ease .9s;
+    transition: all 1s ease .9s;
+  }
+  .vinyl .jacket-pic img {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+    z-index: 500;
+  }
+  .vinyl .jacket-pic:hover + .vinyl-pic {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    left: 105px;
+    z-index: -10;
+  }
+  .vinyl .vinyl-pic {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: -10;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .vinyl .vinyl-pic img {
+    width: 190px;
+    height: 190px;
+  }
+  .anather-contents-box.is-open {
+    -webkit-transition: opacity 1s ease .9s;
+    transition: opacity 1s ease .9s;
   }
 }
 /*# sourceMappingURL=style.css.map */
