@@ -99,7 +99,9 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: calc(1000px * 10);
+  width: calc(500px * 10);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .slider .slide {
