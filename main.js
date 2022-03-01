@@ -1,4 +1,3 @@
-
 const vinylclick = function() {
     const clickElem = document.getElementsByClassName('jacket-pic');
     const blackBg = document.getElementById('js-black-bg');
