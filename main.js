@@ -5,7 +5,7 @@ const vinylclick = function() {
     for(let i = 0; i < clickElem.length; i++) {
         clickElem[i].onclick = function() {
             console.log(i)
-            const vinylBox = document.getElementsByClassName('anather-contents-box');
+            const vinylBox = document.getElementsByClassName('another-contents-box');
             const cancelBtn = document.getElementsByClassName('cancel-btn');
             vinylBox[i].classList.add('is-open');
             blackBg.classList.add('is-open');
