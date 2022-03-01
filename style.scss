@@ -1,3 +1,8 @@
+@font-face {
+    font-family: main;
+    src: url(font/LeagueGothic-Regular-VariableFont_wdth.ttf);
+}
+
 *,
 *:before,
 *:after {
@@ -21,13 +26,24 @@ img {
 }
 body {
     font-size: 10px;
-    font-family: formal;
+    font-family: main;
+    overflow-x: hidden;
 }
 a {
     display: block;
 }
+// ▲　CSS初期設定
 
 
+header {
+    width: 90%;
+    margin: .6rem 3.0rem;
+    h1 {
+        font-size: 5.0rem;
+    }
+}
+
+// ▼　Topスライダー
 @mixin white-gradient {
 	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 }
@@ -38,7 +54,7 @@ $animationSpeed: 15s;
         transform: translateX(0); 
     }
 	100% { 
-        transform: translateX(calc(-520px * 5))  //カクつく為、marginサイズ忘れずに
+        transform: translateX(calc(-500px * 5))  //カクつく為、marginサイズ忘れずに
     }
 }
 // Styling
@@ -50,15 +66,6 @@ $animationSpeed: 15s;
 	overflow:hidden;
 	position: relative;
 	width: 100vw;
-	&::before,
-	&::after {
-		@include white-gradient;
-		content: "";
-		height: 500px;
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	}
 	&::after {
 		right: 0;
 		top: 0;
@@ -71,10 +78,10 @@ $animationSpeed: 15s;
 	.slide-track {
 		animation: scroll $animationSpeed linear infinite;
 		display: flex;
-		width: calc(520px * 10);  //カクつく為、marginサイズ忘れずに
+		width: calc(500px * 10);  //カクつく為、marginサイズ忘れずに
 	}
 	.slide {
-        margin: 0 10px;
+        // margin: 0 10px;
 		height: 500px;
 		width: 500px;
         & img {
@@ -83,6 +90,7 @@ $animationSpeed: 15s;
         }
 	}
 }
+// ▲ Topスライダー
 
 
 #main {
@@ -90,6 +98,13 @@ $animationSpeed: 15s;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 0 auto;
+    .main-title {
+        padding: 2%;
+        font-size: 3.0rem;
+        width: 100%;
+    }
 }
 #js-black-bg {
     position: fixed;
@@ -113,7 +128,8 @@ $animationSpeed: 15s;
         z-index: -10;
         .jacket-pic {
             position: relative;
-            margin-right: 140px;  //vinyl画像が横から出てくるための空間を確保
+            margin-right: 150px;  //vinyl画像が横から出てくるための空間を確保
+            box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, .125);
             & img {
                 width: 200px;
                 height: 200px;
@@ -128,7 +144,7 @@ $animationSpeed: 15s;
         }
         .vinyl-pic {
             position: absolute;  
-            top: calc(8% + 15px);  //.contents-box .vinyl のpadding-topに合せる
+            top: calc(8% + 10px);  //.contents-box .vinyl のpadding-topに合せる
             left: 0;
             z-index: -10;
             transition: all 1s;
@@ -136,6 +152,15 @@ $animationSpeed: 15s;
                 width: 190px;
                 height: 190px;
             } 
+        }
+    }
+    .vinyl-text-box {
+        margin: 2% 0 2% 0;
+        .vinyl-title {
+            font-size: 1.5rem;
+        }
+        .vinyl-artist {
+            font-size: 1.5rem;
         }
     }
     .another-contents-box {
@@ -228,6 +253,72 @@ $animationSpeed: 15s;
 
 }
 @media screen and (max-width:474px) {
+    header {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        h1 {
+            font-size: 3.0rem;
+            margin: 2% auto;
+        }
+    }
+
+    // ▼　Topスライダー
+    @keyframes scroll {
+        0% { 
+            transform: translateX(0); 
+        }
+        100% { 
+            transform: translateX(calc(-300px * 5))  //カクつく為、marginサイズ忘れずに
+        }
+    }
+    .slider {
+        height: 300px;
+        .slide-track {
+            width: calc(300px * 10);  //カクつく為、marginサイズ忘れずに
+        }
+        .slide {
+            height: 300px;
+            width: 300px;
+            & img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+    // ▲ Topスライダー
+
+
+    #main {
+        padding: 0 3%;
+    }
+    .main-title {
+        font-size: 3.0rem;
+        text-align: center;
+    }
+    .contents-box {
+        .vinyl {
+            .jacket-pic {
+                margin-right: 100px;  //vinyl画像が横から出てくるための空間を確保
+                & img {
+                    width: 170px;
+                    height: 170px;
+                }
+                &:hover + .vinyl-pic {
+                    left: 100px;
+                }
+            }
+            .vinyl-pic {
+                position: absolute;  
+                top: calc(8% + 5px);  //.contents-box .vinyl のpadding-topに合せる
+                left: 0;
+                & img {
+                    width: 160px;
+                    height: 160px;
+                } 
+            }
+        }
+    }
     .another-contents-box {
         &.is-open {
             display: block;

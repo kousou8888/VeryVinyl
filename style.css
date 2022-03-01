@@ -1,3 +1,8 @@
+@font-face {
+  font-family: main;
+  src: url(font/LeagueGothic-Regular-VariableFont_wdth.ttf);
+}
+
 *,
 *:before,
 *:after {
@@ -28,11 +33,21 @@ img {
 
 body {
   font-size: 10px;
-  font-family: formal;
+  font-family: main;
+  overflow-x: hidden;
 }
 
 a {
   display: block;
+}
+
+header {
+  width: 90%;
+  margin: .6rem 3.0rem;
+}
+
+header h1 {
+  font-size: 5.0rem;
 }
 
 @-webkit-keyframes scroll {
@@ -41,8 +56,8 @@ a {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(calc(-520px * 5));
-            transform: translateX(calc(-520px * 5));
+    -webkit-transform: translateX(calc(-500px * 5));
+            transform: translateX(calc(-500px * 5));
   }
 }
 
@@ -52,8 +67,8 @@ a {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(calc(-520px * 5));
-            transform: translateX(calc(-520px * 5));
+    -webkit-transform: translateX(calc(-500px * 5));
+            transform: translateX(calc(-500px * 5));
   }
 }
 
@@ -66,16 +81,6 @@ a {
   overflow: hidden;
   position: relative;
   width: 100vw;
-}
-
-.slider::before, .slider::after {
-  background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
-  content: "";
-  height: 500px;
-  position: absolute;
-  width: 200px;
-  z-index: 2;
 }
 
 .slider::after {
@@ -96,11 +101,10 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: calc(520px * 10);
+  width: calc(500px * 10);
 }
 
 .slider .slide {
-  margin: 0 10px;
   height: 500px;
   width: 500px;
 }
@@ -120,6 +124,14 @@ a {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+#main .main-title {
+  padding: 2%;
+  font-size: 3.0rem;
+  width: 100%;
 }
 
 #js-black-bg {
@@ -150,7 +162,9 @@ a {
 
 .contents-box .vinyl .jacket-pic {
   position: relative;
-  margin-right: 140px;
+  margin-right: 150px;
+  -webkit-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.125);
+          box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.125);
 }
 
 .contents-box .vinyl .jacket-pic img {
@@ -169,7 +183,7 @@ a {
 
 .contents-box .vinyl .vinyl-pic {
   position: absolute;
-  top: calc(8% + 15px);
+  top: calc(8% + 10px);
   left: 0;
   z-index: -10;
   -webkit-transition: all 1s;
@@ -179,6 +193,18 @@ a {
 .contents-box .vinyl .vinyl-pic img {
   width: 190px;
   height: 190px;
+}
+
+.contents-box .vinyl-text-box {
+  margin: 2% 0 2% 0;
+}
+
+.contents-box .vinyl-text-box .vinyl-title {
+  font-size: 1.5rem;
+}
+
+.contents-box .vinyl-text-box .vinyl-artist {
+  font-size: 1.5rem;
 }
 
 .contents-box .another-contents-box {
@@ -290,6 +316,75 @@ a {
 }
 
 @media screen and (max-width: 474px) {
+  header {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 3.0rem;
+    margin: 2% auto;
+  }
+  @-webkit-keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-300px * 5));
+              transform: translateX(calc(-300px * 5));
+    }
+  }
+  @keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-300px * 5));
+              transform: translateX(calc(-300px * 5));
+    }
+  }
+  .slider {
+    height: 300px;
+  }
+  .slider .slide-track {
+    width: calc(300px * 10);
+  }
+  .slider .slide {
+    height: 300px;
+    width: 300px;
+  }
+  .slider .slide img {
+    width: 300px;
+    height: 300px;
+  }
+  #main {
+    padding: 0 3%;
+  }
+  .main-title {
+    font-size: 3.0rem;
+    text-align: center;
+  }
+  .contents-box .vinyl .jacket-pic {
+    margin-right: 100px;
+  }
+  .contents-box .vinyl .jacket-pic img {
+    width: 170px;
+    height: 170px;
+  }
+  .contents-box .vinyl .jacket-pic:hover + .vinyl-pic {
+    left: 100px;
+  }
+  .contents-box .vinyl .vinyl-pic {
+    position: absolute;
+    top: calc(8% + 5px);
+    left: 0;
+  }
+  .contents-box .vinyl .vinyl-pic img {
+    width: 160px;
+    height: 160px;
+  }
   .another-contents-box.is-open {
     display: block;
     width: 90%;
