@@ -99,7 +99,7 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: calc(500px * 10);
+  width: calc(1000px * 10);
 }
 
 .slider .slide {
