@@ -80,7 +80,6 @@ header h1 {
 }
 
 .loopSlide ul li {
-  display: inline-block;
   width: 100%;
   margin-right: 0px;
   list-style: none;
@@ -88,7 +87,6 @@ header h1 {
 }
 
 .loopSlide ul li img {
-  display: block;
   width: 100%;
   height: auto;
 }
