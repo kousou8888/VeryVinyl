@@ -50,149 +50,8 @@ header h1 {
   font-size: 5.0rem;
 }
 
-.loopSlide {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  overflow: hidden;
-}
-
-.loopSlide ul {
-  padding: 0;
-  width: 150vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-.loopSlide ul:first-child {
-  -webkit-animation: slide1 60s -30s linear infinite;
-          animation: slide1 60s -30s linear infinite;
-}
-
-.loopSlide ul:last-child {
-  -webkit-animation: slide2 60s linear infinite;
-          animation: slide2 60s linear infinite;
-}
-
-.loopSlide ul li {
-  width: 100%;
-  margin-right: 0px;
-  list-style: none;
-  text-align: center;
-}
-
-.loopSlide ul li img {
-  width: 100%;
-  height: auto;
-}
-
-@-webkit-keyframes slide1 {
-  0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@keyframes slide1 {
-  0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@-webkit-keyframes slide2 {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(-200%);
-            transform: translateX(-200%);
-  }
-}
-
-@keyframes slide2 {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(-200%);
-            transform: translateX(-200%);
-  }
-}
-
-@-webkit-keyframes scroll {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(calc(-500px * 5));
-            transform: translateX(calc(-500px * 5));
-  }
-}
-
-@keyframes scroll {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(calc(-500px * 5));
-            transform: translateX(calc(-500px * 5));
-  }
-}
-
 .slider {
-  background: white;
-  height: 500px;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
   width: 100vw;
-}
-
-.slider::after {
-  right: 0;
-  top: 0;
-  -webkit-transform: rotateZ(180deg);
-          transform: rotateZ(180deg);
-}
-
-.slider::before {
-  left: 0;
-  top: 0;
-}
-
-.slider .slide-track {
-  -webkit-animation: scroll 15s linear infinite;
-          animation: scroll 15s linear infinite;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: calc(500px * 10);
-}
-
-.slider .slide {
-  height: 500px;
-  width: 500px;
 }
 
 .slider .slide img {
@@ -377,39 +236,12 @@ header h1 {
   .loopSlide ul {
     width: 200vw;
   }
-  @-webkit-keyframes scroll {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(calc(-300px * 10));
-              transform: translateX(calc(-300px * 10));
-    }
-  }
-  @keyframes scroll {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(calc(-300px * 10));
-              transform: translateX(calc(-300px * 10));
-    }
-  }
   .slider {
-    height: 300px;
-  }
-  .slider .slide-track {
-    width: calc(300px * 10);
-  }
-  .slider .slide {
-    height: 300px;
-    width: 300px;
+    width: 100vw;
   }
   .slider .slide img {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
   #js-black-bg.is-open {
     -webkit-transition: all 1s ease .7s;
@@ -448,6 +280,13 @@ header h1 {
   header h1 {
     font-size: 3.0rem;
     margin: 2% auto;
+  }
+  .slider {
+    width: 100vw;
+  }
+  .slider .slide img {
+    width: 300px;
+    height: 300px;
   }
   #main {
     padding: 0 3%;

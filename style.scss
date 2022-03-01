@@ -43,106 +43,14 @@ header {
     }
 }
 
-
-
-.loopSlide {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    overflow: hidden;
-    ul {
-        padding: 0;
-        width: 150vw;
-        display: flex;
-        flex-shrink: 0;
-        &:first-child {
-            animation: slide1 60s -30s linear infinite;
-        }
-        &:last-child {
-            animation: slide2 60s linear infinite;
-        }
-        li {
-            // display: inline-block;
-            width: 100%;
-            // min-width: 150px;
-            margin-right: 0px;
-            list-style: none;
-            text-align: center;
-            img {
-                // display: block;
-                width: 100%;
-                height: auto;
-            }
-        }
-    }
-}
-@keyframes slide1 {
-    0% {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
- 
-@keyframes slide2 {
-    0% {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-200%);
-    }
-}
-
-
-
-
-// ▼　Topスライダー
-@mixin white-gradient {
-	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-}
-$animationSpeed: 15s;
-// Animation
-@keyframes scroll {
-	0% { 
-        transform: translateX(0); 
-    }
-	100% { 
-        transform: translateX(calc(-500px * 5))  //カクつく為、marginサイズ忘れずに
-    }
-}
-// Styling
 .slider {
-	background: white;
-	height: 500px;
-	margin: auto;
-	overflow:hidden;
-	position: relative;
-	width: 100vw;
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
-	&::before {
-		left: 0;
-		top: 0;
-	}
-	.slide-track {
-		animation: scroll $animationSpeed linear infinite;
-		display: flex;
-		width: calc(500px * 10);  //カクつく為、marginサイズ忘れずに
-	}
-	.slide {
-        // margin: 0 10px;
-		height: 500px;
-		width: 500px;
-        & img {
+    width: 100vw;
+    .slide {
+        img {
             width: 500px;
             height: 500px;
         }
-	}
+    }
 }
 // ▲ Topスライダー
 
@@ -286,30 +194,15 @@ $animationSpeed: 15s;
         }
     }
 
-    // ▼　Topスライダー
-    @keyframes scroll {
-        0% { 
-            transform: translateX(0); 
-        }
-        100% { 
-            transform: translateX(calc(-300px * 10))  //カクつく為、marginサイズ忘れずに
-        }
-    }
     .slider {
-        height: 300px;
-        .slide-track {
-            width: calc(300px * 10);  //カクつく為、marginサイズ忘れずに
-        }
+        width: 100vw;
         .slide {
-            height: 300px;
-            width: 300px;
-            & img {
-                width: 300px;
-                height: 300px;
+            img {
+                width: 400px;
+                height: 400px;
             }
         }
     }
-    // ▲ Topスライダー
 
     #js-black-bg {
         &.is-open {
@@ -349,6 +242,17 @@ $animationSpeed: 15s;
             margin: 2% auto;
         }
     }
+
+    .slider {
+        width: 100vw;
+        .slide {
+            img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+    // ▲ Topスライダー
 
     #main {
         padding: 0 3%;
