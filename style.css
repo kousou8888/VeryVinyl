@@ -100,8 +100,6 @@ header h1 {
   display: -ms-flexbox;
   display: flex;
   width: calc(500px * 5);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .slider .slide {
@@ -350,7 +348,7 @@ header h1 {
     height: 300px;
   }
   .slider .slide-track {
-    width: calc(300px * 10);
+    width: calc(300px * 5);
   }
   .slider .slide {
     height: 300px;
