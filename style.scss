@@ -43,6 +43,60 @@ header {
     }
 }
 
+
+
+.loopSlide {
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    ul {
+        padding: 0;
+        width: 150vw;
+        display: flex;
+        flex-shrink: 0;
+        &:first-child {
+            animation: slide1 60s -30s linear infinite;
+        }
+        &:last-child {
+            animation: slide2 60s linear infinite;
+        }
+        li {
+            display: inline-block;
+            width: 100%;
+            // min-width: 150px;
+            margin-right: 0px;
+            list-style: none;
+            text-align: center;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+@keyframes slide1 {
+    0% {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+ 
+@keyframes slide2 {
+    0% {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+
+
+
 // ▼　Topスライダー
 @mixin white-gradient {
 	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
@@ -225,13 +279,19 @@ $animationSpeed: 15s;
 
 @media screen and (max-width:1080px) {
 
+    .loopSlide {
+        ul {
+            width: 200vw;
+        }
+    }
+
     // ▼　Topスライダー
     @keyframes scroll {
         0% { 
             transform: translateX(0); 
         }
         100% { 
-            transform: translateX(calc(-300px * 5))  //カクつく為、marginサイズ忘れずに
+            transform: translateX(calc(-300px * 10))  //カクつく為、marginサイズ忘れずに
         }
     }
     .slider {
@@ -288,6 +348,14 @@ $animationSpeed: 15s;
             margin: 2% auto;
         }
     }
+
+
+    .loopSlide {
+        ul {
+            width: 250vw;
+        }
+    }
+
 
     // ▼　Topスライダー
     @keyframes scroll {

@@ -50,6 +50,93 @@ header h1 {
   font-size: 5.0rem;
 }
 
+.loopSlide {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.loopSlide ul {
+  padding: 0;
+  width: 150vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.loopSlide ul:first-child {
+  -webkit-animation: slide1 60s -30s linear infinite;
+          animation: slide1 60s -30s linear infinite;
+}
+
+.loopSlide ul:last-child {
+  -webkit-animation: slide2 60s linear infinite;
+          animation: slide2 60s linear infinite;
+}
+
+.loopSlide ul li {
+  display: inline-block;
+  width: 100%;
+  margin-right: 0px;
+  list-style: none;
+  text-align: center;
+}
+
+.loopSlide ul li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@-webkit-keyframes slide1 {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes slide1 {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes slide2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+  }
+}
+
+@keyframes slide2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+  }
+}
+
 @-webkit-keyframes scroll {
   0% {
     -webkit-transform: translateX(0);
@@ -286,14 +373,17 @@ header h1 {
 }
 
 @media screen and (max-width: 1080px) {
+  .loopSlide ul {
+    width: 200vw;
+  }
   @-webkit-keyframes scroll {
     0% {
       -webkit-transform: translateX(0);
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(calc(-300px * 5));
-              transform: translateX(calc(-300px * 5));
+      -webkit-transform: translateX(calc(-300px * 10));
+              transform: translateX(calc(-300px * 10));
     }
   }
   @keyframes scroll {
@@ -302,8 +392,8 @@ header h1 {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(calc(-300px * 5));
-              transform: translateX(calc(-300px * 5));
+      -webkit-transform: translateX(calc(-300px * 10));
+              transform: translateX(calc(-300px * 10));
     }
   }
   .slider {
@@ -357,6 +447,9 @@ header h1 {
   header h1 {
     font-size: 3.0rem;
     margin: 2% auto;
+  }
+  .loopSlide ul {
+    width: 250vw;
   }
   @-webkit-keyframes scroll {
     0% {
